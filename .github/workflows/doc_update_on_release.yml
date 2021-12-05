@@ -15,5 +15,5 @@ jobs:
               'Luckenborg',
               'doc_content_target',
               'workflows/fetch_docs_openhabian.yml',
-              'main',
+              'main'
             });
