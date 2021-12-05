@@ -7,13 +7,9 @@ jobs:
   triggerWorkflowDispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy Stage
-        uses: actions/github-script@v5
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
         with:
-          script: |
-            await github.rest.actions.createWorkflowDispatch({
-              'Luckenborg',
-              'doc_content_target',
-              'workflows/fetch_docs_openhabian.yml',
-              'main'
-            });
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: Luckenborg/doc_content_target
+          event-type: update-openhabian-docs-event
