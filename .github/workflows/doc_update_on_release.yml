@@ -1,5 +1,4 @@
 name: Doc update on release
-description: Will trigger an update of the docs repository on release of this one
 
 on:
   workflow_dispatch
